@@ -30,7 +30,7 @@ services:
       dockerfile: Rails.Dockerfile
     environment: 
       - LOGSTASH_ENABLED=true
-      - LOGSTASH_HOST=logstash
+      - LOGSTASH_HOST=elk
       - LOGSTASH_PORT=5228
     volumes:
       - .:/app
