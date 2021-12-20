@@ -21,7 +21,12 @@ RUN apk add --no-cache \
 RUN mkdir -p /app
 WORKDIR /app
 
-EXPOSE 300
+COPY Gemfile* ./
+RUN bundle install --jobs 20 --retry 5
+COPY . .
+
+EXPOSE 3000
+ENTRYPOINT ["bundle", "exec"]
 
 # RUN ["chmod", "+x", "./docker-entrypoint.sh"]
 # CMD ["./docker-entrypoint.sh"]
