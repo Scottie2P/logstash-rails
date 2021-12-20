@@ -25,7 +25,7 @@ COPY Gemfile* ./
 RUN bundle install --jobs 20 --retry 5
 COPY . .
 
-EXPOSE 3000
+EXPOSE 300
 ENTRYPOINT ["bundle", "exec"]
 
 # RUN ["chmod", "+x", "./docker-entrypoint.sh"]
