@@ -10,9 +10,6 @@ services:
       - "5044:5044"
     volumes:
       - elk-data:/var/lib/elasticsearch
-
-volumes:
-   elk-data:
    
 #   logstash:
 #     build:
@@ -27,22 +24,24 @@ volumes:
 #     volumes:
 #       - logstash_data:/var/lib/elasticsearch
 
-#   web:
-#     build:
-#       context: .
-#       dockerfile: Rails.Dockerfile
-#     environment: 
-#       - LOGSTASH_ENABLED=true
-#       - LOGSTASH_HOST=logstash
-#       - LOGSTASH_PORT=5228
-#     volumes:
-#       - .:/app
-#       - bundler_gems:/usr/local/bundle/
-#     ports:
-#       - "3000:3000"
-#     links:
-#       - logstash
+  web:
+    build:
+      context: .
+      dockerfile: Rails.Dockerfile
+    environment: 
+      - LOGSTASH_ENABLED=true
+      - LOGSTASH_HOST=logstash
+      - LOGSTASH_PORT=5228
+    volumes:
+      - .:/app
+      - bundler_gems:/usr/local/bundle/
+    ports:
+      - "3000:3000"
+    links:
+      - logstash
 
+volumes:
+   elk-data:
+   bundler_gems:
 # volumes:
 #   logstash_data:
-#   bundler_gems:
