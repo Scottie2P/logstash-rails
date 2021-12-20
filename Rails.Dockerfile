@@ -16,6 +16,7 @@ RUN apk add --no-cache \
   sqlite-dev \
   sqlite \
   tzdata \
+  imagemagick \
   yarn
 
 RUN mkdir -p /app
