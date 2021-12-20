@@ -38,7 +38,7 @@ services:
     ports:
       - "3000:3000"
     links:
-      - logstash
+      - elk
 
 volumes:
    elk-data:
