@@ -12,6 +12,9 @@ To run the project you will need Docker and DockerCompose installed on your mach
 can then run the project via DockerCompose as below;
 
 ```bash
+sysctl -w vm.max_map_count=262144
+```
+```bash
 docker-compose up
 ```
 
