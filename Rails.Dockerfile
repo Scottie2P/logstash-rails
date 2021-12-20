@@ -21,5 +21,7 @@ RUN apk add --no-cache \
 RUN mkdir -p /app
 WORKDIR /app
 
-EXPOSE 3000
+EXPOSE 300
+
+RUN ["chmod", "+x", "./docker-entrypoint.sh"]
 CMD ["./docker-entrypoint.sh"]
